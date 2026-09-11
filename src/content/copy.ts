@@ -1,0 +1,224 @@
+import type { HeadlineKey } from '../config/site'
+
+/*
+ * Todo o texto da página mora aqui.
+ * Trechos entre [[ ]] dependem do cliente e aparecem sublinhados na tela.
+ * Títulos, afirmações do manifesto e perguntas do FAQ são copy provisória da Horizon, para aprovação.
+ */
+
+interface EssentialItem {
+  term: string
+  value: string
+}
+
+interface ScheduleItem {
+  time: string
+  title: string
+  description: string
+}
+
+interface Person {
+  name: string
+  role: string
+  /** Caminho em public/images, ou null enquanto a foto não chega */
+  photo: string | null
+}
+
+interface Speaker {
+  name: string
+  role: string
+  /** Uma frase: o que essa pessoa apresenta */
+  bio: string
+  /** Caminho em public/images, ou null enquanto a foto não chega */
+  photo: string | null
+  /** Perfil (Instagram, LinkedIn...) para onde a foto leva. null enquanto não chega. */
+  social: string | null
+}
+
+interface Testimonial {
+  quote: string
+  author: string
+  role: string
+}
+
+interface Sponsor {
+  name: string
+  url: string
+  /** Caminho em public/images, ou null enquanto a arte não chega — nesse caso o nome aparece em texto */
+  logo: string | null
+}
+
+interface FaqItem {
+  question: string
+  answer: string
+}
+
+interface Consent {
+  message: string
+  accept: string
+  decline: string
+}
+
+interface PrivacyPage {
+  backLabel: string
+  title: string
+  body: string
+}
+
+interface Copy {
+  skipLink: string
+  cta: { label: string; exitNote: string }
+  hero: { headlines: Record<HeadlineKey, string>; support: string }
+  essencial: { title: string; items: EssentialItem[] }
+  manifesto: { title: string; statements: string[]; body: string }
+  video: { title: string; caption: string; playLabel: string; pendingLabel: string }
+  programacao: { title: string; items: ScheduleItem[] }
+  palestrantes: { title: string; intro: string; items: Speaker[] }
+  pessoas: { title: string; intro: string; items: Person[] }
+  prova: { title: string; testimonials: Testimonial[]; supportersLabel: string; supporters: Sponsor[] }
+  participar: { title: string; price: string; condition: string; includedTitle: string; included: string[] }
+  faq: { title: string; items: FaqItem[] }
+  consent: Consent
+  privacyPage: PrivacyPage
+  footer: {
+    contactLabel: string
+    instagramLabel: string
+    emailLabel: string
+    organizerLabel: string
+    organizer: string
+    organizerDocument: string
+    privacyLabel: string
+    credit: string
+  }
+}
+
+export const copy: Copy = {
+  skipLink: 'Pular para o conteúdo',
+  cta: {
+    label: 'Garantir minha vaga',
+    exitNote: 'O pagamento acontece em [[nome da plataforma de venda]], com cartão ou Pix.',
+  },
+  hero: {
+    headlines: {
+      a: 'Tudo que o interior precisa já está aqui dentro.',
+      b: 'Expandir sem sair daqui.',
+    },
+    support: '[[O que é o Expande Interior e para quem, em uma frase concreta]]',
+  },
+  essencial: {
+    title: 'Informações essenciais',
+    items: [
+      { term: 'O que é', value: 'Empresários do interior no nível dos grandes centros' },
+      { term: 'Quando', value: '17/10/2026, [[horário]]' },
+      { term: 'Onde', value: 'Maison Finesse, Itabaiana - PB' },
+      { term: 'Quanto', value: '[[valor ou lote atual]]' },
+    ],
+  },
+  manifesto: {
+    title: 'Por que o Expande Interior existe',
+    statements: [
+      'O interior não precisa pedir licença à capital para crescer.',
+      'Quando uma empresa daqui amadurece, a cidade amadurece com ela.',
+      'A régua sobe para todos.',
+    ],
+    body: '[[Três ou quatro frases do cliente: por que o Expande Interior existe e o que muda na região.]]',
+  },
+  video: {
+    title: 'Vídeo de apresentação',
+    caption: '[[Do que trata o vídeo, em uma frase, e a duração]]',
+    playLabel: 'Assistir ao vídeo',
+    pendingLabel: '[[vídeo a definir]]',
+  },
+  programacao: {
+    title: 'Programação',
+    items: [
+      { time: '[[horário]]', title: '[[nome da atividade]]', description: '[[o que acontece, em uma frase]]' },
+      { time: '[[horário]]', title: '[[nome da atividade]]', description: '[[o que acontece, em uma frase]]' },
+      { time: '[[horário]]', title: '[[nome da atividade]]', description: '[[o que acontece, em uma frase]]' },
+    ],
+  },
+  palestrantes: {
+    title: 'Quem apresenta',
+    intro: '[[Uma frase sobre a curadoria dos palestrantes convidados]]',
+    items: [
+      {
+        name: '[[nome completo]]',
+        role: '[[cargo e empresa]]',
+        bio: '[[uma frase sobre o que essa pessoa apresenta]]',
+        photo: null,
+        social: null,
+      },
+      {
+        name: '[[nome completo]]',
+        role: '[[cargo e empresa]]',
+        bio: '[[uma frase sobre o que essa pessoa apresenta]]',
+        photo: null,
+        social: null,
+      },
+      {
+        name: '[[nome completo]]',
+        role: '[[cargo e empresa]]',
+        bio: '[[uma frase sobre o que essa pessoa apresenta]]',
+        photo: null,
+        social: null,
+      },
+    ],
+  },
+  pessoas: {
+    title: 'Quem está por trás',
+    intro: '[[Uma frase sobre quem organiza e conduz o Expande Interior]]',
+    items: [
+      { name: '[[nome completo]]', role: '[[papel no Expande Interior]]', photo: null },
+      { name: '[[nome completo]]', role: '[[papel no Expande Interior]]', photo: null },
+      { name: '[[nome completo]]', role: '[[papel no Expande Interior]]', photo: null },
+    ],
+  },
+  prova: {
+    title: 'Quem já participou',
+    // Vazio de propósito: prova social nunca é inventada. A seção só aparece com conteúdo real.
+    testimonials: [],
+    supportersLabel: 'Com apoio de',
+    supporters: [],
+    // Formato por item, quando chegar: { name: 'Nome do apoiador', url: 'https://...', logo: '/images/apoiadores/nome.svg' }
+  },
+  participar: {
+    title: 'Participar do Expande Interior',
+    price: '[[R$ valor]]',
+    condition: '[[lote atual e até quando vale]]',
+    includedTitle: 'O que está incluso',
+    included: ['[[item incluso]]', '[[item incluso]]', '[[item incluso]]'],
+  },
+  faq: {
+    title: 'Perguntas frequentes',
+    items: [
+      { question: 'Para quem é o Expande Interior?', answer: '[[perfil de quem deve participar]]' },
+      {
+        question: 'Como funciona o pagamento?',
+        answer: 'O pagamento é feito em [[nome da plataforma de venda]], com cartão ou Pix. [[condições de parcelamento, se houver]]',
+      },
+      { question: 'Posso transferir minha vaga para outra pessoa?', answer: '[[regra de transferência]]' },
+      { question: 'E se eu não puder comparecer?', answer: '[[política de cancelamento e reembolso]]' },
+      { question: 'Tenho outra dúvida. Com quem falo?', answer: '[[canal de atendimento: Instagram ou e-mail]]' },
+    ],
+  },
+  consent: {
+    message: 'Usamos cookies para entender como as pessoas chegam até esta página. Você pode aceitar ou recusar.',
+    accept: 'Aceitar',
+    decline: 'Recusar',
+  },
+  privacyPage: {
+    backLabel: 'Voltar para o Expande Interior',
+    title: 'Política de privacidade',
+    body: '[[Texto da política de privacidade, a definir com o cliente ou o jurídico.]]',
+  },
+  footer: {
+    contactLabel: 'Dúvidas',
+    instagramLabel: '[[@instagram]]',
+    emailLabel: '[[e-mail de contato]]',
+    organizerLabel: 'Realização',
+    organizer: '[[nome do organizador]]',
+    organizerDocument: '[[CNPJ]]',
+    privacyLabel: 'Política de privacidade',
+    credit: 'Site por Horizon',
+  },
+}

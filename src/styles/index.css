@@ -1,0 +1,238 @@
+@import "tailwindcss";
+
+@theme {
+  --color-night: #1A0A0D;
+  --color-night-raised: #271115;
+  --color-wine: #66222E;
+  --color-fog: #D3D3D3;
+  --color-fog-hover: #F2F2F2;
+  --color-mist: #B3ABAD;
+  --color-rule: #3E282C;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  --font-serif: "Piazzolla Variable", Georgia, serif;
+  --font-sans: "Fustat Variable", system-ui, sans-serif;
+
+  --ease-out-soft: cubic-bezier(0.2, 0.7, 0.1, 1);
+}
+
+@layer base {
+  html {
+    background-color: var(--color-night);
+    color: var(--color-fog);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+
+  @media (min-width: 1024px) {
+    body {
+      font-size: 1.125rem;
+    }
+  }
+
+  ::selection {
+    background-color: var(--color-fog);
+    color: var(--color-wine);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-fog);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  /* Margens laterais da página: mesmas em todas as seções para os textos alinharem */
+  .page-x {
+    padding-inline: 1rem;
+  }
+
+  @media (min-width: 40rem) {
+    .page-x {
+      padding-inline: 17vw;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .page-x {
+      padding-inline: 14vw;
+    }
+  }
+
+  /* 28px em 360px até 50px em 1440px */
+  .title-section {
+    font-family: var(--font-serif);
+    font-size: clamp(1.75rem, 1.3rem + 2vw, 3.125rem);
+    font-weight: 500;
+    line-height: 1.08;
+    word-spacing: 0.05em;
+    text-wrap: balance;
+  }
+
+  /* 38px em 360px de tela até 96px em 1440px. Ver APRENDIZADO.md */
+  .title-hero {
+    font-family: var(--font-serif);
+    font-size: clamp(2.375rem, 1.167rem + 5.37vw, 6rem);
+    font-weight: 600;
+    line-height: 1.02;
+    letter-spacing: 0;
+    word-spacing: 0.05em;
+    text-wrap: balance;
+    overflow-wrap: break-word;
+  }
+
+  @media (min-width: 1024px) {
+    .title-hero {
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+  }
+
+  /* 30px em 360px até 60px em 1440px */
+  .title-statement {
+    font-family: var(--font-serif);
+    font-size: clamp(1.875rem, 1.25rem + 2.8vw, 3.75rem);
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: 0;
+    word-spacing: 0.05em;
+    text-wrap: balance;
+  }
+
+  /* Conteúdo que ainda depende do cliente */
+  .placeholder {
+    text-decoration-line: underline;
+    text-decoration-style: dashed;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--color-mist);
+    text-underline-offset: 0.22em;
+  }
+}
+
+/* Assinatura: parênteses se abrindo de dentro para fora */
+.hero-paren {
+  transition:
+    transform 1200ms var(--ease-out-soft),
+    opacity 900ms ease-out;
+}
+
+.hero-copy {
+  transition: opacity 700ms ease-out 380ms;
+}
+
+[data-motion="abrindo"]:not([data-ready]) .hero-paren--left {
+  transform: translateX(24vw);
+  opacity: 0;
+}
+
+[data-motion="abrindo"]:not([data-ready]) .hero-paren--right {
+  transform: translateX(-24vw);
+  opacity: 0;
+}
+
+[data-motion="abrindo"]:not([data-ready]) .hero-copy {
+  opacity: 0;
+}
+
+/* Aparição suave, usada só nas afirmações do manifesto */
+.reveal {
+  transition:
+    opacity 800ms ease-out,
+    transform 900ms var(--ease-out-soft);
+}
+
+.reveal:not([data-visible]) {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+/*
+ * Marca a emenda night/wine como quebra de capítulo, não como corte acidental de cor.
+ * Uma linha só, sem brilho, sem par: é régua funcional, não filete decorativo.
+ * 1px na cor rule ficava ilegível contra o wine (testado); 2px em mist a 60% é o mínimo
+ * que ainda lê como marca deliberada, sem virar borda vistosa.
+ */
+.chapter {
+  border-block: 2px solid color-mix(in oklab, var(--color-mist) 60%, transparent);
+}
+
+/* Se as seções entre os dois blocos bordô estiverem ocultas, eles não se fundem num bloco só */
+.chapter + .chapter {
+  margin-top: 5rem;
+}
+
+/* Accordion: animar altura sem saber a altura, com grid-template-rows */
+.accordion-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 320ms var(--ease-out-soft);
+}
+
+.accordion-panel[data-open] {
+  grid-template-rows: 1fr;
+}
+
+.accordion-icon {
+  position: relative;
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  margin-top: 0.4em;
+}
+
+.accordion-icon::before,
+.accordion-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: currentColor;
+  transition: transform 320ms var(--ease-out-soft);
+}
+
+.accordion-icon::after {
+  transform: rotate(90deg);
+}
+
+.accordion-icon[data-open]::after {
+  transform: rotate(0deg);
+}
+
+/* CTA fixo no mobile */
+.sticky-cta {
+  transition: transform 360ms var(--ease-out-soft);
+}
+
+.sticky-cta[data-hidden] {
+  transform: translateY(110%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-paren,
+  .hero-copy,
+  .reveal,
+  .sticky-cta,
+  .accordion-panel,
+  .accordion-icon::before,
+  .accordion-icon::after {
+    transition: none !important;
+  }
+
+  [data-motion] .hero-paren,
+  [data-motion] .hero-copy,
+  .reveal {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
