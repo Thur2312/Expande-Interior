@@ -191,14 +191,27 @@ export const copy: Copy = {
   faq: {
     title: 'Perguntas frequentes',
     items: [
-      { question: 'Para quem é o Expande Interior?', answer: '[[perfil de quem deve participar]]' },
+      {
+        question: 'Para quem é o Expande Interior?',
+        answer: 'Para empresários e empreendedores do interior que querem colocar o negócio no nível dos grandes centros.',
+      },
       {
         question: 'Como funciona o pagamento?',
-        answer: 'O pagamento é feito em [[nome da plataforma de venda]], com cartão ou Pix. [[condições de parcelamento, se houver]]',
+        answer: 'O pagamento é feito direto em [[nome da plataforma de venda]], com cartão ou Pix. [[Se houver parcelamento: em até Nx sem juros.]]',
       },
-      { question: 'Posso transferir minha vaga para outra pessoa?', answer: '[[regra de transferência]]' },
-      { question: 'E se eu não puder comparecer?', answer: '[[política de cancelamento e reembolso]]' },
-      { question: 'Tenho outra dúvida. Com quem falo?', answer: '[[canal de atendimento: Instagram ou e-mail]]' },
+      {
+        question: 'Posso transferir minha vaga para outra pessoa?',
+        answer: 'Não — a vaga é pessoal e intransferível.',
+      },
+      {
+        question: 'E se eu não puder comparecer?',
+        answer:
+          'Reembolso integral até 7 dias antes do evento (10/10/2026). Depois desse prazo, não há reembolso. [[Como solicitar: canal e prazo de processamento.]]',
+      },
+      {
+        question: 'Tenho outra dúvida. Com quem falo?',
+        answer: 'É só chamar pelo Instagram @expandeinterior ou pelo e-mail [[endereço de contato]] — respondemos o quanto antes.',
+      },
     ],
   },
   consent: {
@@ -213,7 +226,7 @@ export const copy: Copy = {
   },
   footer: {
     contactLabel: 'Dúvidas',
-    instagramLabel: '[[@instagram]]',
+    instagramLabel: '@expandeinterior',
     emailLabel: '[[e-mail de contato]]',
     organizerLabel: 'Realização',
     organizer: '[[nome do organizador]]',

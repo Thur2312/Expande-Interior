@@ -36,7 +36,7 @@ export const site: SiteConfig = {
   showPending: true,
   video: null,
   links: {
-    instagram: null,
+    instagram: 'https://www.instagram.com/expandeinterior/',
     email: null,
     privacy: '/privacidade.html',
   },
