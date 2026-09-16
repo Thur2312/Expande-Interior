@@ -17,13 +17,6 @@ interface ScheduleItem {
   description: string
 }
 
-interface Person {
-  name: string
-  role: string
-  /** Caminho em public/images, ou null enquanto a foto não chega */
-  photo: string | null
-}
-
 interface Speaker {
   name: string
   role: string
@@ -46,6 +39,8 @@ interface Sponsor {
   url: string
   /** Caminho em public/images, ou null enquanto a arte não chega — nesse caso o nome aparece em texto */
   logo: string | null
+  /** true quando a arte original é escura (traço preto): inverte pra ficar visível sobre o fundo night */
+  invert?: boolean
 }
 
 interface FaqItem {
@@ -68,13 +63,12 @@ interface PrivacyPage {
 interface Copy {
   skipLink: string
   cta: { label: string; exitNote: string }
-  hero: { headlines: Record<HeadlineKey, string>; support: string }
+  hero: { headlines: Record<HeadlineKey, string>; }
   essencial: { title: string; items: EssentialItem[] }
   manifesto: { title: string; statements: string[]; body: string }
   video: { title: string; caption: string; playLabel: string; pendingLabel: string }
   programacao: { title: string; items: ScheduleItem[] }
   palestrantes: { title: string; intro: string; items: Speaker[] }
-  pessoas: { title: string; intro: string; items: Person[] }
   prova: { title: string; testimonials: Testimonial[]; supportersLabel: string; supporters: Sponsor[] }
   participar: { title: string; price: string; condition: string; includedTitle: string; included: string[] }
   faq: { title: string; items: FaqItem[] }
@@ -100,18 +94,17 @@ export const copy: Copy = {
   },
   hero: {
     headlines: {
-      a: 'Tudo que o interior precisa já está aqui dentro.',
+      a: 'Empresários do interior no nível dos grandes centros.',
       b: 'Expandir sem sair daqui.',
     },
-    support: '[[O que é o Expande Interior e para quem, em uma frase concreta]]',
   },
   essencial: {
     title: 'Informações essenciais',
     items: [
       { term: 'O que é', value: 'Empresários do interior no nível dos grandes centros' },
-      { term: 'Quando', value: '17/10/2026, [[horário]]' },
+      { term: 'Quando', value: '17/10/2026, 09:00 às 17:00' },
       { term: 'Onde', value: 'Maison Finesse, Itabaiana - PB' },
-      { term: 'Quanto', value: '[[valor ou lote atual]]' },
+      { term: 'Quanto', value: 'R$ 179' },
     ],
   },
   manifesto: {
@@ -132,9 +125,11 @@ export const copy: Copy = {
   programacao: {
     title: 'Programação',
     items: [
-      { time: '[[horário]]', title: '[[nome da atividade]]', description: '[[o que acontece, em uma frase]]' },
-      { time: '[[horário]]', title: '[[nome da atividade]]', description: '[[o que acontece, em uma frase]]' },
-      { time: '[[horário]]', title: '[[nome da atividade]]', description: '[[o que acontece, em uma frase]]' },
+      { time: '09:00', title: 'Abertura', description: '[[O que é o Expande Interior e porque ele é o início da transformação do seu negócio?]]' },
+      { time: '09:40', title: 'Palestras da Manhã', description: '[[Conteúdos práticos e objetivo que vão te gerar um turbilhão de ideias]]' },
+      { time: '12:00', title: 'Intervalo pro Almoço', description: '[[Hora de dar uma pausa, absorver o conteúdo, e se preparar para muito mais]]' },
+      { time: '13:30', title: 'Palestras da Tarde', description: '[[ Conteúdo em dobro, que se transforma e margem de lucro pra sua empresa]]' },
+      { time: '17:00', title: 'Encerramento', description: '[[Uma surpresa muito especial te aguardaB]]' },
     ],
   },
   palestrantes: {
@@ -142,10 +137,10 @@ export const copy: Copy = {
     intro: '[[Uma frase sobre a curadoria dos palestrantes convidados]]',
     items: [
       {
-        name: '[[nome completo]]',
-        role: '[[cargo e empresa]]',
-        bio: '[[uma frase sobre o que essa pessoa apresenta]]',
-        photo: null,
+        name: 'Fabiano Rodrigues',
+        role: 'Representante comercial, AIRGO',
+        bio: 'Mais de 18 anos em vendas e Network Marketing, com passagens pela Forever Living Products e pela Niponflex — hoje representa a AIRGO, levando tecnologia e inovação às marcas.',
+        photo: '/images/palestrantes/fabiano-rodrigues.jpeg',
         social: null,
       },
       {
@@ -162,15 +157,6 @@ export const copy: Copy = {
         photo: null,
         social: null,
       },
-    ],
-  },
-  pessoas: {
-    title: 'Quem está por trás',
-    intro: '[[Uma frase sobre quem organiza e conduz o Expande Interior]]',
-    items: [
-      { name: '[[nome completo]]', role: '[[papel no Expande Interior]]', photo: null },
-      { name: '[[nome completo]]', role: '[[papel no Expande Interior]]', photo: null },
-      { name: '[[nome completo]]', role: '[[papel no Expande Interior]]', photo: null },
     ],
   },
   prova: {
@@ -178,13 +164,18 @@ export const copy: Copy = {
     // Vazio de propósito: prova social nunca é inventada. A seção só aparece com conteúdo real.
     testimonials: [],
     supportersLabel: 'Com apoio de',
-    supporters: [],
-    // Formato por item, quando chegar: { name: 'Nome do apoiador', url: 'https://...', logo: '/images/apoiadores/nome.svg' }
+    supporters: [
+      { name: 'UnidasNet', url: '[[link redes sociais UnidasNet]]', logo: '/images/apoiadores/unidasnet.png' },
+      { name: 'Unidas Systems', url: '[[link redes sociais Unidas Systems]]', logo: '/images/apoiadores/unidas-systems.png' },
+      { name: 'Dudu Higienização', url: '[[link redes sociais Dudu Higienização]]', logo: '/images/apoiadores/dudu-higienizacao.png', invert: true },
+      { name: 'Delícias da Ilha', url: '[[link redes sociais Delícias da Ilha]]', logo: '/images/apoiadores/delicias-da-ilha.png', invert: true },
+      { name: 'Alavanque Consultoria', url: '[[link redes sociais Alavanque Consultoria]]', logo: '/images/apoiadores/alavanque-consultoria.png', invert: true },
+    ],
   },
   participar: {
     title: 'Participar do Expande Interior',
-    price: '[[R$ valor]]',
-    condition: '[[lote atual e até quando vale]]',
+    price: '[[R$ 179,00]]',
+    condition: '[[Lote Único, até ../../2026]]',
     includedTitle: 'O que está incluso',
     included: ['[[item incluso]]', '[[item incluso]]', '[[item incluso]]'],
   },

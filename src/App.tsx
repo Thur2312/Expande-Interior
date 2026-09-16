@@ -12,7 +12,6 @@ import { Hero } from './components/sections/Hero'
 import { Manifesto } from './components/sections/Manifesto'
 import { Palestrantes } from './components/sections/Palestrantes'
 import { Participar } from './components/sections/Participar'
-import { Pessoas } from './components/sections/Pessoas'
 import { Programacao } from './components/sections/Programacao'
 import { Prova } from './components/sections/Prova'
 import { Video } from './components/sections/Video'
@@ -52,7 +51,6 @@ export default function App() {
         <Video />
         <Programacao />
         <Palestrantes />
-        <Pessoas />
         <Prova />
         <Participar ref={participarRef} salesUrl={salesUrl} />
         <Faq />

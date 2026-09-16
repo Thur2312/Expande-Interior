@@ -41,17 +41,11 @@ export function Hero({ config, salesUrl, ref }: HeroProps) {
           {copy.hero.headlines[config.headline]}
         </h1>
 
-        <div className="mt-7 flex flex-col gap-7 lg:mt-12 lg:flex-row lg:items-end lg:justify-between lg:gap-16">
-          <p className="max-w-[36ch] text-mist lg:text-[1.1875rem]">
-            <Rich text={copy.hero.support} />
+        <div className="mt-7 lg:mt-12">
+          <CtaButton href={salesUrl} location="hero" fullWidth className="sm:w-auto" />
+          <p className="mt-3 max-w-[34ch] text-[0.875rem] leading-snug text-mist">
+            <Rich text={copy.cta.exitNote} />
           </p>
-
-          <div className="lg:shrink-0">
-            <CtaButton href={salesUrl} location="hero" fullWidth className="sm:w-auto" />
-            <p className="mt-3 max-w-[34ch] text-[0.875rem] leading-snug text-mist">
-              <Rich text={copy.cta.exitNote} />
-            </p>
-          </div>
         </div>
       </div>
     </section>

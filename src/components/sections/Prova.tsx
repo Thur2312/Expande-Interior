@@ -34,23 +34,23 @@ export function Prova() {
       )}
 
       {realSupporters.length > 0 && (
-        <div className="mt-14 border-t border-rule pt-6">
-          <p className="text-[0.9375rem] text-mist">{supportersLabel}</p>
-          <ul className="mt-4 flex flex-wrap items-center gap-x-10 gap-y-4">
+        <div className="mt-14 border-t border-rule pt-10 text-center lg:mt-20 lg:pt-14">
+          <p className="text-base text-mist lg:text-lg">{supportersLabel}</p>
+          <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-14 gap-y-10 lg:mt-10 lg:gap-x-20">
             {realSupporters.map((sponsor) => (
               <li key={sponsor.name}>
                 <a
                   href={sponsor.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-lg text-mist transition-colors duration-200 hover:text-fog"
+                  className="inline-flex items-center text-lg text-mist transition-opacity duration-200 hover:opacity-100"
                 >
                   {sponsor.logo ? (
                     <img
                       src={sponsor.logo}
                       alt={sponsor.name}
                       loading="lazy"
-                      className="h-6 w-auto grayscale opacity-80 transition-opacity duration-200 hover:opacity-100 lg:h-7"
+                      className={`h-12 w-auto opacity-90 grayscale transition-opacity duration-200 hover:opacity-100 lg:h-16 ${sponsor.invert ? 'invert' : ''}`}
                     />
                   ) : (
                     sponsor.name
