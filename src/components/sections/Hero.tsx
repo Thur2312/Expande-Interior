@@ -15,6 +15,7 @@ interface HeroProps {
 
 export function Hero({ config, salesUrl, ref }: HeroProps) {
   const fontsReady = useFontsReady()
+  const isFoto = config.heroVariant === 'foto'
 
   return (
     <section
@@ -23,7 +24,7 @@ export function Hero({ config, salesUrl, ref }: HeroProps) {
       aria-labelledby="hero-title"
       data-motion={config.parenthesesMotion}
       data-ready={fontsReady ? '' : undefined}
-      className="relative isolate flex min-h-[calc(92svh-4.75rem)] items-center overflow-hidden py-12 lg:min-h-[calc(90svh-6.25rem)] lg:py-16"
+      className="relative isolate flex min-h-[calc(92svh-4.75rem)] items-center overflow-hidden py-8 lg:min-h-[calc(90svh-6.25rem)] lg:py-4"
     >
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-between">
         <Paren
@@ -37,11 +38,18 @@ export function Hero({ config, salesUrl, ref }: HeroProps) {
       </div>
 
       <div className="hero-copy page-x w-full">
-        <h1 id="hero-title" className="title-hero max-w-[14ch] lg:max-w-[19ch]">
+        {isFoto && (
+          <div aria-hidden="true" className="hero-photo relative mx-auto -mb-14 w-[82vw] max-w-[420px] sm:max-w-[520px] sm:-mb-20 lg:max-w-[640px] lg:-mb-36">
+            <img src="/images/hero-palestrantes.png" alt="" width={1270} height={1061} fetchPriority="high" className="h-auto w-full" />
+            <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-night to-transparent" />
+          </div>
+        )}
+
+        <h1 id="hero-title" className="title-hero relative max-w-[14ch] lg:max-w-[19ch]">
           {copy.hero.headlines[config.headline]}
         </h1>
 
-        <div className="mt-7 lg:mt-12">
+        <div className="mt-5 lg:mt-4">
           <CtaButton href={salesUrl} location="hero" fullWidth className="sm:w-auto" />
           <p className="mt-3 max-w-[34ch] text-[0.875rem] leading-snug text-mist">
             <Rich text={copy.cta.exitNote} />

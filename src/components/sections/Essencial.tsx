@@ -7,7 +7,7 @@ const DESKTOP_SPANS = ['lg:col-span-3', 'lg:col-span-3', 'lg:col-span-4', 'lg:co
 
 export function Essencial() {
   return (
-    <section aria-labelledby="essencial-title" className="page-x pb-20 lg:pb-32">
+    <section aria-labelledby="essencial-title" className="page-x pb-10 lg:pb-16">
       <h2 id="essencial-title" className="sr-only">
         {copy.essencial.title}
       </h2>

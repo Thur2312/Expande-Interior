@@ -1,4 +1,4 @@
-import { site, type HeadlineKey, type ParenthesesMotion, type SiteConfig } from './site'
+import { site, type HeadlineKey, type HeroVariant, type ParenthesesMotion, type SiteConfig } from './site'
 
 /**
  * Garante que um valor vindo da URL é uma das opções permitidas.
@@ -10,10 +10,11 @@ function pick<T extends string>(value: string | null, allowed: readonly T[], fal
 
 const HEADLINES: readonly HeadlineKey[] = ['a', 'b']
 const MOTIONS: readonly ParenthesesMotion[] = ['abrindo', 'estatico']
+const HERO_VARIANTS: readonly HeroVariant[] = ['foto', 'tipografico']
 
 /**
  * Permite ao cliente comparar as opções pelo próprio link:
- * ?titulo=b&parenteses=estatico
+ * ?titulo=b&parenteses=estatico&hero=tipografico
  */
 export function resolveConfig(search: string = window.location.search): SiteConfig {
   const params = new URLSearchParams(search)
@@ -22,5 +23,6 @@ export function resolveConfig(search: string = window.location.search): SiteConf
     ...site,
     headline: pick(params.get('titulo'), HEADLINES, site.headline),
     parenthesesMotion: pick(params.get('parenteses'), MOTIONS, site.parenthesesMotion),
+    heroVariant: pick(params.get('hero'), HERO_VARIANTS, site.heroVariant),
   }
 }

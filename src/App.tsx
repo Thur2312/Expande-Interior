@@ -9,7 +9,6 @@ import { Faq } from './components/sections/Faq'
 import { Footer } from './components/sections/Footer'
 import { Header } from './components/sections/Header'
 import { Hero } from './components/sections/Hero'
-import { Manifesto } from './components/sections/Manifesto'
 import { Palestrantes } from './components/sections/Palestrantes'
 import { Participar } from './components/sections/Participar'
 import { Programacao } from './components/sections/Programacao'
@@ -47,7 +46,6 @@ export default function App() {
       <main id="conteudo">
         <Hero ref={heroRef} config={config} salesUrl={salesUrl} />
         <Essencial />
-        <Manifesto />
         <Video />
         <Programacao />
         <Palestrantes />

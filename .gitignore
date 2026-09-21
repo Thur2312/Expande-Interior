@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Vídeo bruto (202 MB): a versão comprimida é public/video-apresentacao.mp4
+public/lv_0_20260917212342.mp4

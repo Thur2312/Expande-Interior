@@ -10,7 +10,10 @@ interface ParticiparProps {
 }
 
 export function Participar({ salesUrl, ref }: ParticiparProps) {
-  const { title, price, condition, includedTitle, included } = copy.participar
+  const { title, price, condition, learnTitle, learn } = copy.participar
+  // Reaproveita o que já está no bloco essencial: quem chega ao fim da página decide
+  // com data e local à vista, sem voltar lá em cima e sem um segundo texto para manter.
+  const logistics = copy.essencial.items.filter(({ term }) => term === 'Quando' || term === 'Onde')
 
   return (
     <section
@@ -32,14 +35,26 @@ export function Participar({ salesUrl, ref }: ParticiparProps) {
         <p className="mt-4 text-mist">
           <Rich text={condition} />
         </p>
+
+        <dl className="mt-10 border-t border-fog/20 lg:mt-14 lg:max-w-[34ch]">
+          {logistics.map(({ term, value }) => (
+            <div key={term} className="border-b border-fog/20 py-3.5">
+              <dt className="text-[0.875rem] text-mist">{term}</dt>
+              <dd className="mt-0.5 text-lg">
+                <Rich text={value} />
+              </dd>
+            </div>
+          ))}
+        </dl>
       </div>
 
       <div className="mt-12 lg:col-span-5 lg:col-start-8 lg:mt-2">
-        <h3 className="font-semibold">{includedTitle}</h3>
+        <h3 className="font-semibold">{learnTitle}</h3>
+        {/* Temas em serifa e em corpo maior: são o motivo da compra, então ganham destaque sobre o resto da lista */}
         <ul className="mt-4 border-t border-fog/20">
-          {included.map((item, index) => (
-            <li key={index} className="border-b border-fog/20 py-3.5 text-lg">
-              <Rich text={item} />
+          {learn.map((topic) => (
+            <li key={topic} className="border-b border-fog/20 py-3 font-serif text-[1.5rem] leading-tight lg:text-[1.75rem]">
+              {topic}
             </li>
           ))}
         </ul>

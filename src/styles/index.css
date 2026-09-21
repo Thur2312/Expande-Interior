@@ -81,7 +81,8 @@
   /* 38px em 360px de tela até 96px em 1440px. Ver APRENDIZADO.md */
   .title-hero {
     font-family: var(--font-serif);
-    font-size: clamp(2.375rem, 1.167rem + 5.37vw, 6rem);
+    /* 34px em 360px até 86px em 1440px (reduzido de 38–96px a pedido do Thur) */
+    font-size: clamp(2.125rem, 1.042rem + 4.81vw, 5.375rem);
     font-weight: 600;
     line-height: 1.02;
     letter-spacing: 0;
@@ -95,17 +96,6 @@
       font-weight: 500;
       letter-spacing: -0.01em;
     }
-  }
-
-  /* 30px em 360px até 60px em 1440px */
-  .title-statement {
-    font-family: var(--font-serif);
-    font-size: clamp(1.875rem, 1.25rem + 2.8vw, 3.75rem);
-    font-weight: 500;
-    line-height: 1.08;
-    letter-spacing: 0;
-    word-spacing: 0.05em;
-    text-wrap: balance;
   }
 
   /* Conteúdo que ainda depende do cliente */
@@ -129,6 +119,13 @@
   transition: opacity 700ms ease-out 380ms;
 }
 
+/* A foto só aparece depois que os parênteses terminam de abrir (1200ms de transform) */
+.hero-photo {
+  transition:
+    opacity 700ms ease-out 1250ms,
+    transform 700ms var(--ease-out-soft) 1250ms;
+}
+
 [data-motion="abrindo"]:not([data-ready]) .hero-paren--left {
   transform: translateX(24vw);
   opacity: 0;
@@ -141,6 +138,11 @@
 
 [data-motion="abrindo"]:not([data-ready]) .hero-copy {
   opacity: 0;
+}
+
+[data-motion="abrindo"]:not([data-ready]) .hero-photo {
+  opacity: 0;
+  transform: scale(0.92);
 }
 
 /* Aparição suave, usada só nas afirmações do manifesto */
@@ -220,6 +222,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .hero-paren,
+  .hero-photo,
   .hero-copy,
   .reveal,
   .sticky-cta,
@@ -230,6 +233,7 @@
   }
 
   [data-motion] .hero-paren,
+  [data-motion] .hero-photo,
   [data-motion] .hero-copy,
   .reveal {
     transform: none !important;
