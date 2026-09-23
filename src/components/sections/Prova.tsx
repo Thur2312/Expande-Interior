@@ -74,7 +74,13 @@ export function Prova() {
                   {isPending(sponsor.url) ? (
                     <span className={inner}>{logo}</span>
                   ) : (
-                    <a href={sponsor.url} target="_blank" rel="noopener noreferrer" className={inner}>
+                    <a
+                      href={sponsor.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${sponsor.name} (abre o perfil em uma nova aba)`}
+                      className={inner}
+                    >
                       {logo}
                     </a>
                   )}

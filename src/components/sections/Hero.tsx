@@ -40,7 +40,7 @@ export function Hero({ config, salesUrl, ref }: HeroProps) {
       <div className="hero-copy page-x w-full">
         {isFoto && (
           <div aria-hidden="true" className="hero-photo relative mx-auto -mb-14 w-[82vw] max-w-[420px] sm:max-w-[520px] sm:-mb-20 lg:max-w-[640px] lg:-mb-36">
-            <img src="/images/hero-palestrantes.png" alt="" width={1270} height={1061} fetchPriority="high" className="h-auto w-full" />
+            <img src="/images/hero-palestrantes.webp" alt="" width={1270} height={1061} fetchPriority="high" className="h-auto w-full" />
             <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-night to-transparent" />
           </div>
         )}

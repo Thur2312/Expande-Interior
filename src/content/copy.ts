@@ -124,16 +124,16 @@ export const copy: Copy = {
       'Seu negócio está crescendo ou você apenas está trabalhando mais? Porque faturar não é o mesmo que evoluir. Chegou a hora de sair do automático. Uma imersão feita para quem quer expandir os horizontes, se posicionar melhor, vender mais e transformar conhecimento em crescimento, expansão, estratégia e relacionamento. O acesso que faltava chegou. Empresário do interior no nível dos grandes centros. Na tela final: Dia 17 de outubro, no Maison Finesse, Itabaiana-PB.',
     duration: '0:32',
     playLabel: 'Assistir ao vídeo',
-    pendingLabel: '[[vídeo a definir]]',
+    pendingLabel: 'Vídeo em breve',
   },
   programacao: {
     title: 'Programação',
     items: [
-      { time: '09:00', title: 'Abertura', description: '[[O que é o Expande Interior e porque ele é o início da transformação do seu negócio?]]' },
-      { time: '09:40', title: 'Palestras da Manhã', description: '[[Conteúdos práticos e objetivo que vão te gerar um turbilhão de ideias]]' },
-      { time: '12:00', title: 'Intervalo pro Almoço', description: '[[Hora de dar uma pausa, absorver o conteúdo, e se preparar para muito mais]]' },
-      { time: '13:30', title: 'Palestras da Tarde', description: '[[ Conteúdo em dobro, que se transforma e margem de lucro pra sua empresa]]' },
-      { time: '17:00', title: 'Encerramento', description: '[[Uma surpresa muito especial te aguardaB]]' },
+      { time: '09:00', title: 'Abertura', description: 'Apresentação do Expande Interior e do que vamos viver ao longo do dia.' },
+      { time: '09:40', title: 'Palestras da Manhã', description: 'Conteúdos práticos e objetivos para você sair com ideias para aplicar no negócio.' },
+      { time: '12:00', title: 'Intervalo pro Almoço', description: 'Uma pausa para descansar, absorver o conteúdo e se preparar para a tarde.' },
+      { time: '13:30', title: 'Palestras da Tarde', description: 'Mais uma rodada de conteúdos práticos para levar ao seu negócio.' },
+      { time: '17:00', title: 'Encerramento', description: 'Uma surpresa especial encerra o dia.' },
     ],
   },
   palestrantes: {
@@ -145,35 +145,35 @@ export const copy: Copy = {
         role: 'Publicitário e estrategista digital, sócio-fundador da K4S',
         bio: 'Há 15 anos assina projetos para marcas como Facebook, Adidas, Lacoste, Latam e Skol, mais de 1.000 no total. Construiu e vendeu duas empresas e foi eleito Copywriter do ano pela Revista CARAS.',
         photo: '/images/palestrantes/TARCISIO.jpg',
-        social: null,
+        social: 'https://www.instagram.com/tarcisiotaos?stkn=MTM1MG55a2h5d3FiNg==',
       },
       {
         name: 'Samuel Souza',
         role: 'Empreendedor, mentor e estrategista de negócios',
         bio: 'Serviu ao Exército e atuou na contabilidade antes de empreender. Em e-commerce e marketplaces, geriu contas que somam mais de R$ 17 milhões em faturamento e criou operação própria com mais de R$ 1,5 milhão em vendas.',
         photo: '/images/palestrantes/SAMUEL.jpg',
-        social: null,
+        social: 'https://www.instagram.com/eusousamuelsouza_?stkn=MWV4bmtpeWg3cmdmaA==',
       },
       {
         name: 'Cristyan Luís',
         role: 'Contador, especialista em contabilidade fiscal e de e-commerce',
         bio: 'Seis anos de carreira na contabilidade. Gerencia empresas internacionais e gigantes do varejo de peças automotivas de João Pessoa e é contador de um dos maiores ecossistemas de e-commerce do Brasil.',
         photo: '/images/palestrantes/Christyan.jpg',
-        social: null,
+        social: 'https://www.instagram.com/cristyanluiscont?stkn=MWR3Nm5uNXowNzJ6Nw==',
       },
       {
         name: 'Luiza Rodrigues',
         role: 'Social media, graduanda em Relações Públicas',
         bio: 'Há dois anos assina estratégias de comunicação para negócios de saúde, bem-estar, estética e outros segmentos, ajudando marcas e profissionais a se posicionarem no digital e a transformar seguidores em clientes.',
         photo: '/images/palestrantes/LUIZA.jpg',
-        social: null,
+        social: 'https://www.instagram.com/luiza_rodrigues.rp?stkn=bnliNGg3Zm5qdW15',
       },
       {
         name: 'Thácio Barbosa',
         role: 'Designer e estrategista de marcas',
         bio: 'Conheceu o design em um trabalho da escola, em 2017, e há 6 anos ajuda empresas a se comunicarem com clareza e intenção. Especialista em negócios do interior que querem se tornar referências regionais.',
         photo: '/images/palestrantes/THACIO.jpg',
-        social: null,
+        social: 'https://www.instagram.com/thaciobarbosa?stkn=Y2xycWZodHNwYjF0',
       },
       {
         // Fora da lista de descrições enviada em 21/09. Mantido no fim até o cliente confirmar se segue como palestrante.
@@ -181,7 +181,7 @@ export const copy: Copy = {
         role: 'Representante comercial, AIRGO',
         bio: 'Mais de 18 anos em vendas e Network Marketing, com passagens pela Forever Living Products e pela Niponflex. Hoje representa a AIRGO, levando tecnologia e inovação às marcas.',
         photo: '/images/palestrantes/fabiano-rodrigues.jpeg',
-        social: null,
+        social: 'https://www.instagram.com/fabianorodrigues56_?stkn=eG9ka2NyOHEwZzRl&utm_source=qr',
       },
     ],
   },
@@ -191,17 +191,17 @@ export const copy: Copy = {
     testimonials: [],
     supportersLabel: 'Com apoio',
     supporters: [
-      { name: 'UnidasNet', url: '[[link redes sociais UnidasNet]]', logo: '/images/apoiadores/unidasnet.png' },
-      { name: 'Unidas Systems', url: '[[link redes sociais Unidas Systems]]', logo: '/images/apoiadores/unidas-systems.png' },
-      { name: 'Dudu Higienização', url: '[[link redes sociais Dudu Higienização]]', logo: '/images/apoiadores/dudu-higienizacao.png', invert: true },
-      { name: 'Delícias da Ilha', url: '[[link redes sociais Delícias da Ilha]]', logo: '/images/apoiadores/delicias-da-ilha.png', invert: true },
-      { name: 'Alavanque Consultoria', url: '[[link redes sociais Alavanque Consultoria]]', logo: '/images/apoiadores/alavanque-consultoria.png', invert: true },
+      { name: 'UnidasNet', url: 'https://www.instagram.com/unidasnet?stkn=MWJlZjl1aTl1cTgxZw==', logo: '/images/apoiadores/unidasnet.png' },
+      { name: 'Unidas Systems', url: 'https://www.instagram.com/unidasnet?stkn=MWJlZjl1aTl1cTgxZw==', logo: '/images/apoiadores/unidas-systems.png' },
+      { name: 'Dudu Higienização', url: 'https://www.instagram.com/dudu_higienizacoes?stkn=c3MzdHpnaWVsamV4', logo: '/images/apoiadores/dudu-higienizacao.png', invert: true },
+      { name: 'Delícias da Ilha', url: 'https://www.instagram.com/_deliciasdailha?stkn=cmtqaHc3Z3p0bGQx', logo: '/images/apoiadores/delicias-da-ilha.png', invert: true },
+      { name: 'Alavanque Consultoria', url: 'https://www.instagram.com/alavanqueconsultoria?stkn=eW9nNno5MXZmaHg3', logo: '/images/apoiadores/alavanque-consultoria.png', invert: true },
     ],
   },
   participar: {
     title: 'Participar do Expande Interior',
-    price: '[[R$ 179,00]]',
-    condition: '[[Lote Único]]',
+    price: 'R$ 179,00',
+    condition: 'Lote Único',
     learnTitle: 'Você vai aprender sobre',
     // Temas ditos no vídeo de apresentação do cliente ("se posicionar melhor, vender mais... estratégia e relacionamento").
     // Confirmar com ele se são exatamente os temas do dia antes de publicar.
@@ -216,7 +216,7 @@ export const copy: Copy = {
       },
       {
         question: 'Como funciona o pagamento?',
-        answer: 'O pagamento é feito direto em Asaas, com cartão ou Pix. [[Se houver parcelamento: em até 3x sem juros.]]',
+        answer: 'O pagamento é feito direto em Asaas, com cartão ou Pix.',
       },
       {
         question: 'Posso transferir minha vaga para outra pessoa?',
@@ -225,11 +225,11 @@ export const copy: Copy = {
       {
         question: 'E se eu não puder comparecer?',
         answer:
-          'Reembolso integral até 7 dias antes do evento (10/10/2026). Depois desse prazo, não há reembolso. [[Como solicitar: canal e prazo de processamento.]]',
+          'Reembolso integral até 7 dias antes do evento (10/10/2026). Depois desse prazo, não há reembolso. Para pedir o reembolso, fale com a gente pelo Instagram @expandeinterior ou pelo e-mail contatoexpandeinterior@gmail.com.',
       },
       {
         question: 'Tenho outra dúvida. Com quem falo?',
-        answer: 'É só chamar pelo Instagram @expandeinterior ou pelo e-mail [[endereço de contato]] — respondemos o quanto antes.',
+        answer: 'É só chamar pelo Instagram @expandeinterior ou pelo e-mail contatoexpandeinterior@gmail.com — respondemos o quanto antes.',
       },
     ],
   },
@@ -241,19 +241,18 @@ export const copy: Copy = {
   privacyPage: {
     backLabel: 'Voltar para o Expande Interior',
     title: 'Política de privacidade',
-    updated: 'Última atualização: [[data de publicação]]',
+    updated: 'Última atualização: 23/09/2026',
     intro:
       'Esta política explica quais dados esta página coleta, para que servem e como você controla o uso deles. O site do Expande Interior é uma página de apresentação: não tem cadastro, login nem formulário. A compra da vaga acontece em outra plataforma, com regras próprias.',
     // Baseada no que o código do site faz hoje (GTM com Consent Mode, utm_, localStorage, vídeo e fontes próprios,
     // compra na Asaas). Se algo disso mudar (ex.: vídeo no YouTube, novo formulário), revisar o texto.
-    // É um rascunho técnico: o organizador ou o jurídico dele precisa revisar antes de publicar.
     sections: [
       {
         title: 'Quem é o responsável',
         blocks: [
           {
             paragraph:
-              'O responsável pelos dados tratados nesta página é o organizador do evento, [[nome do organizador e CNPJ]]. O site foi desenvolvido pela Horizon LTDA. Para falar sobre privacidade, escreva para [[e-mail de contato para assuntos de privacidade]].',
+              'O responsável pelos dados tratados nesta página é o organizador do evento, Expande Interior, CNPJ 67.533.178/0001-79. O site foi desenvolvido pela Horizon LTDA. Para falar sobre privacidade, escreva para contatoexpandeinterior@gmail.com.',
           },
         ],
       },
@@ -347,7 +346,7 @@ export const copy: Copy = {
           },
           {
             paragraph:
-              'Para exercer qualquer um desses direitos, escreva para [[e-mail de contato para assuntos de privacidade]]. Se a resposta não resolver, você pode registrar reclamação na Autoridade Nacional de Proteção de Dados (ANPD).',
+              'Para exercer qualquer um desses direitos, escreva para contatoexpandeinterior@gmail.com. Se a resposta não resolver, você pode registrar reclamação na Autoridade Nacional de Proteção de Dados (ANPD).',
           },
         ],
       },
@@ -369,10 +368,10 @@ export const copy: Copy = {
   footer: {
     contactLabel: 'Dúvidas',
     instagramLabel: '@expandeinterior',
-    emailLabel: '[[e-mail de contato]]',
+    emailLabel: 'contatoexpandeinterior@gmail.com',
     organizerLabel: 'Realização',
-    organizer: '[[nome do organizador]]',
-    organizerDocument: '[[CNPJ]]',
+    organizer: 'Expande Interior',
+    organizerDocument: '67.533.178/0001-79',
     privacyLabel: 'Política de privacidade',
     credit: 'Site por Horizon',
   },

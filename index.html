@@ -3,20 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>Expande Interior</title>
-    <meta name="description" content="[[Descrição de até 155 caracteres: o que é o Expande Interior, quando e onde]]" />
+    <title>Expande Interior | Imersão para empresários do interior</title>
+    <meta name="description" content="Imersão de um dia em Itabaiana-PB para empresários do interior: posicionamento, vendas, estratégia e relacionamento. 17/10/2026, das 09h às 17h." />
     <meta name="theme-color" content="#1A0A0D" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="canonical" href="https://[[dominio-final]]/" />
+    <!-- Primeira imagem do hero (LCP): baixa já no início, em paralelo com o JavaScript -->
+    <link rel="preload" as="image" href="/images/hero-palestrantes.webp" type="image/webp" fetchpriority="high" />
+    <link rel="canonical" href="%SITE_URL%/" />
 
     <!-- Estáticas de propósito: o preview do WhatsApp não executa JavaScript -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
-    <meta property="og:title" content="Expande Interior" />
-    <meta property="og:description" content="[[Mesma descrição curta]]" />
-    <meta property="og:url" content="https://[[dominio-final]]/" />
-    <!-- og:image pendente: falta a arte final 1200x630 e o domínio de publicação -->
-    <!-- <meta property="og:image" content="https://[[dominio-final]]/og.jpg" /> -->
+    <meta property="og:title" content="Expande Interior | Imersão para empresários do interior" />
+    <meta property="og:description" content="Imersão de um dia em Itabaiana-PB para empresários do interior: posicionamento, vendas, estratégia e relacionamento. 17/10/2026, das 09h às 17h." />
+    <meta property="og:url" content="%SITE_URL%/" />
+    <!-- O endereço do site entra no build (ver vite.config.ts). O WhatsApp exige URL absoluta na og:image. -->
+    <meta property="og:image" content="%SITE_URL%/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
   </head>
   <body>

@@ -52,12 +52,12 @@ export const site: SiteConfig = {
   parenthesesMotion: 'abrindo',
   headline: 'a',
   heroVariant: 'foto',
-  showPending: true,
+  showPending: false,
   // Legenda já vem queimada na imagem do vídeo, por isso captions é null (um .vtt duplicaria o texto).
   video: { src: '/video-apresentacao.mp4', captions: null, poster: '/images/video-capa.jpg' },
   links: {
     instagram: 'https://www.instagram.com/expandeinterior/',
-    email: null,
+    email: 'contatoexpandeinterior@gmail.com',
     privacy: '/privacidade.html',
   },
 }
