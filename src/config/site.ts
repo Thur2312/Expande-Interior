@@ -47,7 +47,7 @@ export interface SiteConfig {
 }
 
 export const site: SiteConfig = {
-  salesUrl: '#',
+  salesUrl: 'https://www.sympla.com.br/evento/expande-interior/3592792',
   gtmId: null,
   parenthesesMotion: 'abrindo',
   headline: 'a',

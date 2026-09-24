@@ -99,7 +99,7 @@ export const copy: Copy = {
   skipLink: 'Pular para o conteúdo',
   cta: {
     label: 'Garantir minha vaga',
-    exitNote: 'O pagamento acontece em Asaas, com cartão ou Pix.',
+    exitNote: 'O pagamento acontece na Sympla, com cartão, Pix ou boleto.',
   },
   hero: {
     headlines: {
@@ -216,7 +216,7 @@ export const copy: Copy = {
       },
       {
         question: 'Como funciona o pagamento?',
-        answer: 'O pagamento é feito direto em Asaas, com cartão ou Pix.',
+        answer: 'O pagamento é feito direto na Sympla, com cartão, Pix ou boleto.',
       },
       {
         question: 'Posso transferir minha vaga para outra pessoa?',
@@ -245,7 +245,7 @@ export const copy: Copy = {
     intro:
       'Esta política explica quais dados esta página coleta, para que servem e como você controla o uso deles. O site do Expande Interior é uma página de apresentação: não tem cadastro, login nem formulário. A compra da vaga acontece em outra plataforma, com regras próprias.',
     // Baseada no que o código do site faz hoje (GTM com Consent Mode, utm_, localStorage, vídeo e fontes próprios,
-    // compra na Asaas). Se algo disso mudar (ex.: vídeo no YouTube, novo formulário), revisar o texto.
+    // compra na Sympla). Se algo disso mudar (ex.: vídeo no YouTube, novo formulário), revisar o texto.
     sections: [
       {
         title: 'Quem é o responsável',
@@ -299,11 +299,11 @@ export const copy: Copy = {
         blocks: [
           {
             paragraph:
-              'O botão “Garantir minha vaga” leva você à Asaas, plataforma onde o pagamento é feito, com cartão ou Pix. Os dados que você informar lá, como nome, documento e forma de pagamento, são tratados pela plataforma conforme a política de privacidade dela. Esta página não recebe nem guarda esses dados.',
+              'O botão “Garantir minha vaga” leva você à Sympla, plataforma de ingressos onde o pagamento é feito, com cartão, Pix ou boleto. Os dados que você informar lá, como nome, documento e forma de pagamento, são tratados pela plataforma conforme a política de privacidade dela. Esta página não recebe nem guarda esses dados.',
           },
           {
             paragraph:
-              '[[Confirmar se o organizador recebe os dados dos participantes e para quê, por exemplo lista de presença e contato sobre o evento, e descrever aqui.]]',
+              'Ao comprar pela Sympla, o organizador do evento recebe os dados da inscrição, como nome e e-mail, para controlar a entrada no evento e falar com os participantes sobre ele.',
           },
           { paragraph: 'Os demais links, como o do Instagram, levam a sites que seguem as próprias políticas.' },
         ],
@@ -313,7 +313,7 @@ export const copy: Copy = {
         blocks: [
           {
             paragraph:
-              'Esta página não vende dados e só os compartilha com quem é necessário para funcionar: o Google, para a medição, se você aceitar; a Vercel, que hospeda o site; e a Asaas, quando você vai até a plataforma para comprar.',
+              'Esta página não vende dados e só os compartilha com quem é necessário para funcionar: o Google, para a medição, se você aceitar; a Vercel, que hospeda o site; e a Sympla, quando você vai até a plataforma para comprar.',
           },
         ],
       },
